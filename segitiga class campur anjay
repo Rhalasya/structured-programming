@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+class Segitiga {
+  private:
+    double a, b, c;
+
+  public:
+    Segitiga(double x, double y, double z) {
+      a = x;
+      b = y;
+      c = z;
+    }
+
+    double keliling() {
+      return a + b + c;
+    }
+};
+
+int main() {
+  double a, b, c;
+  char nama[100];
+
+  cout << "Masukkan nama segitiga: ";
+  cin.getline(nama, 100);
+
+  cout << "Masukkan panjang sisi a: ";
+  cin >> a;
+
+  cout << "Masukkan panjang sisi b: ";
+  cin >> b;
+
+  cout << "Masukkan panjang sisi c: ";
+  cin >> c;
+
+  Segitiga *segitiga = new Segitiga(a, b, c);
+
+  cout << "Keliling segitiga " << nama << " adalah " << segitiga->keliling() << endl;
+
+  delete segitiga;
+
+  return 0;
+}
